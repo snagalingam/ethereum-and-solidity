@@ -50,7 +50,7 @@ contract Campaign {
         approversCount++;
     }
 
-    function createReqeust(string memory _description, uint _value, address payable _recipient) public restricted {
+    function createRequest(string memory _description, uint _value, address payable _recipient) public restricted {
         Request storage r = requests[numRequests++];
         r.description = _description;
         r.value = _value;
@@ -69,7 +69,7 @@ contract Campaign {
         request.approvalCount++;
     }
 
-    function finalizeReqeust(uint index) public restricted {
+    function finalizeRequest(uint index) public restricted {
         Request storage request = requests[index];
 
         require(!request.complete);
